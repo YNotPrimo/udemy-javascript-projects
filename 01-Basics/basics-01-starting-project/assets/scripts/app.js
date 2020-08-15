@@ -1,5 +1,7 @@
-let currResult = 0;
+const defaultResult = 0;
 
-currResult += 69;
+let currResult = (defaultResult + 10) * 3 / 2 - 1;
 
-outputResult(currResult, "");
+let calculationDescription = `(${defaultResult} + 10) * 3 / 2 - 1`
+
+outputResult(currResult, calculationDescription);
