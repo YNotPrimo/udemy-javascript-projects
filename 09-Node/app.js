@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
     const userName = req.body.username || "Unknown User";
     res.render("index", {
-        userName: userName
+        userName
     });
 });
 
