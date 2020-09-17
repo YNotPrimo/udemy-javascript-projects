@@ -11,19 +11,17 @@ class User implements Greetable, Printable {
 	// private age: number;
 
 	constructor(public name: string, private age: number) {}
-	
+
 	print(): void {
 		console.log(this.name);
-		
 	}
 }
 
 class Admin extends User {
-    constructor(name: string, age: number, private permissions: string[]) {
-        super(name, age);
-    }
+	constructor(name: string, age: number, private permissions: Array<string>) {
+		super(name, age);
+	}
 }
-
 
 const user = new User("Primo", 30);
 console.log(user.name);
@@ -39,8 +37,6 @@ enum OutputMode {
 	CONSOLE,
 	ALERT,
 }
-
-
 
 function printResult(result: ResultType, printMode: OutputMode) {
 	if (printMode === OutputMode.CONSOLE) {
@@ -74,3 +70,10 @@ buttonElement.addEventListener("click", () => {
 	printResult(result, OutputMode.ALERT);
 	// console.log(results);
 });
+
+function logAndEcho<T>(val: T){
+	console.log(val);
+	return val;
+}
+
+logAndEcho<string>("Hi there");
