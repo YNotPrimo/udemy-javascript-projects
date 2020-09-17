@@ -6,15 +6,22 @@ function add(a: number, b: number): number {
 	return a + b;
 }
 
-buttonElement.addEventListener("click", () =>{
-    const num1 = +num1Input.value;
-    const num2 = +num2Input.value;
+let results: { res: number }[] = [];
 
-    const result = add(num1, num2);
-    console.log(result);
-    
+buttonElement.addEventListener("click", () => {
+	const num1 = +num1Input.value;
+	const num2 = +num2Input.value;
 
+	const result = add(num1, num2);
+
+	const resultContainer = {
+        res: result,
+        print() {
+            console.log(this.res);
+        }
+	};
+
+	results.push(resultContainer);
+
+	console.log(results);
 });
-
-
-
