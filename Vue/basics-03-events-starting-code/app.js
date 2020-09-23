@@ -1,7 +1,9 @@
 const app = Vue.createApp({
 	data() {
 		return {
-			counter: +prompt("Enter initial number"),
+      counter: +prompt("Enter initial number"),
+      name: "",
+      confirmedName: "",
 		};
 	},
 
@@ -12,7 +14,19 @@ const app = Vue.createApp({
 
 		decrement(n) {
 			this.counter -= n;
-		},
+    },
+    
+    setName(event, lastName) {
+      this.name = `${event.target.value} ${lastName}`;
+    },
+
+    confirmInput(){
+      this.confirmedName = this.name;
+    },
+
+    submitForm() {
+      alert("Submitted!");
+    },
 	},
 });
 
