@@ -20,6 +20,7 @@
       <h2>Events in Action</h2>
       <button v-on:click="increment(10)">Increase</button>
       <button v-on:click="decrement(5)">Decrease</button>
+      <p v-once>Initial Result: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <input type="text" v-on:input="setName($event, 'Peshov')" v-on:keyup.enter="confirmInput">
       <p>Your Name: {{ confirmedName }}</p>
